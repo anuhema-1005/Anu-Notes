@@ -1,0 +1,249 @@
+                                                                                                   DAY 2
+
+
+Q1.
+                SEARCH IAM -->CLICK USER GROUP -->CLICK CREATE USER  -->GIVE NAME -->SEARCH AMAZONS3FULLACCESS.
+
+Q2.
+               Click user -->click create user -->give user name -->click provide user access->click IAM user-->click custom pw-->remove the tick last box-->click next-->click attach policies-->search amazons3full-->next-->create user-->download cvv-->return back-->go back to usergroup-->click s3admingroup-->add user-->click that user.
+
+Q3.
+                Click policies-->create policies-->select S3 in service-->give deny in effect-->search deleteobject in list & select-->in resources select all-->next-->give policy name-->click create policy
+
+Q4.
+                Click policies-->create policies-->select S3 in service-->give allow in effect-->click list &select all-->in resources select all-->next-->give policy name-->click create policy-->click user-->create user-->give user name -->click provide user access->click IAM user-->click custom pw-->remove the tick last box-->click next-->click attach policies-->search our policy name that is inline policy -->click that-->create user.
+
+Q5.
+                IAM-->click role-->create role-->search service EC2-->next-->s3fullaccess-->role name-->create role-->search EC2-->lunch instances-->instances name-->key pair-->click all tick box-->launch instance-->select instances-->click action-->select security-->modify IAM-->select our role-->click update IAM role
+
+Q6.
+               IAM-->create user-->click the username-->security credentials-->Assign MFA-->sacn QR-->next-->device name-->next-->code-->add MFA.      
+
+
+
+                                                                                                       DAY3
+
+
+Q1.
+               S3-->bucket-->create-->ACL enable-->block public(tick-public)-->create bucket-->click bucket-->upload folder-->click folder-->upload file.
+
+Q2.
+              create bucket with private-->click bucket-->permission-->edit-->block public access-->remove tick-->save-->go to file-->permission-->edit--->read(2nd).
+
+Q3.
+             bucket-->permission-->bucket policy-->edit-->top right corner policy generator-->types of policy la(s3 bucket policy)-->effect (deny)-->principle(*)-->action(getobject)-->go back to the file-->copy arn-->paste in arn box-->add statement-->generate policy-->copy the code-->bucket permission-->bucket policy paste-->save.
+
+Q4.
+            bucket-->properties-->bucket version-->edit-->enable-->save-->add public file once again-->show versions.
+
+Q5.
+            bucket-->properties-->static website hosting edit-->enable-->type html name-->save-->go back to the bucket-->upload html (public)-->click the url in properties of static website hosting.
+
+Q6.
+           bucket-->management-->create lifecycle rule-->give name-->apply to all obj-->move current version,delete tick these-->days (IA)30-->add transition(days 120,glacier deep).
+
+
+
+
+                                                                                                      DAY4
+
+
+Q1.
+              launch instances with windows-->go to instances-->click that-->connect-->RDP client-->download-->get pw-->upload -->decrypt pw-->copy pw-->go to the download file-->connect-->paste pw-->yes-->instance window appear.
+
+Q2.
+             EC2 -->volume-->create volume-->size5gb-->go to the volume-->action-->attach volume-->select the instances -->attach-->go to the instance window(virtual)-->search disk-->partition-->change offine-online-->initalize-non-->mbr ok-->right click-->new simple volume-->next & finish-->file manager -->create folder and file.
+Q3.
+           volume-->action-->create snapshot-->created.
+Q4.
+           launche instance with aws-->click it->connect-->ssu-->copy-->go to file-->shift+right-->open terminal-->right click-->enter
+Q5.
+sudo su-->yum update-->yum install httpd-->service httpd status-->service httpd start-->sts-->cd /var/www/html-->ls-->nano index.html-->paste-->ctrl+x-->enter-->open ip.
+
+Q6.
+           create instance-->action-->image &template-->create image-->name-->create-->AMI created-->stop existing instance-->create another instance-->go to my AMI-->default(AMI selected).
+
+
+
+                                                                                                  DAY5
+
+Q1,2.
+             search vpc-->click ur vpc-->click create vpc-->click vpc & more in resorce-->give name in auto generate-->change ip 10->192-->availability zone click 3-->private(6)public(3)-->create
+
+Q3.
+            vpc-->subnets-->filter(choose our vpc)-->NATgateway-->create-->name-->select subnet(private)-->connectivity public-->allocate elastic public-->create-->repeat this for another gate.
+
+Q4.
+           create vpc-->name-->ip(11)-->avail zone(3)-->public(3)-->private(3)-->create-->change region(n.virgenia)-->create vpc-->ip(12)-->zone(3)-->public(3)-->private(3)-->create-->right click the window-->duplicate-->change mumbai region-->peering connenction-->name-->request mumbai-->another region-->acceptor(virginia)-->paste virginia id-->create-->go to viriginia window-->peering connection-->action-->accept.
+
+Q5.
+          mumbai region-->create VPC(ip 10)-->create another vpc(ip11)-->another vpc(ip12)-->peering connection(xy)-->request x-->accept(y)-->y(action)-->accept-->same for y-z,z-x..
+
+
+                                                                                                  DAY7(Autoscaling)
+
+
+Q1.
+        lauch instances(AWS linux)-->connect-->ec2 connect-->type all comments(sudo su--yum update--yum install httpd--service httpd status--service httpd start--after come to instance--copy the dns link of instance and paste it in the chrome to check it works--cd /var/www/html--ls--nano index.html)-->action-->image & template-->create images-->name-->create-->launch template-->create -->name-->My ami select-->instances type(t2-micro)-->key pair(select)-->subnet(1a)-->security group-->create template.
+
+Q2.
+       ec2-->autoscaling-->create-->name-->select temp-->next-->subnet(1a)-->next-->health check(30)-->next-->disire capacity(2)min-1,max-4-->next-->create.
+
+
+                                                                                                 DAY8(Cloudfront)
+
+Q1.
+       s3-->create bucket-->name-->enable acl & remove block public-->create-->upload html file-->go to file-->permission-->edit-->public read select-->save-->go to bucket-->properties-->static edit(enable)-->save-->cloudfront-->create-->origin domain(select s3 bucket)-->view website-->http only-->cache optimize-->WAF (do not).
+
+Q2.
+     launch instances-->connect-->comments(sudo su  
+>  yum install git -y  
+>  yum install nginx -y  
+>  https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-up-node-on-ec2-instance.html
+execute 3 commands (2,3,4)select  
+>  node -v 
+>  npm -v  
+>  service nginx start
+> copy public address  
+>  paste  
+>   cd /usr/share/nginx/html/  
+>  ls  
+>  cd ..  
+>  rm -rf html  
+>  mkdir html  
+>  cd html/  
+>  git clone https://github.com/MaX-NeO/React_Aws_Deploy_Sample  
+>  ls  
+>  cd React_Aws_Deploy_Sample  
+>  ls  
+>  npm i  
+>  npm run build  
+>  ls  
+>  cd build  
+>  ls  
+>  pwd 
+>  mv * ../../  
+>  cd ..  
+>  cd ..  
+>  refresh page)
+
+    load balancer-->create-->name-->select 3 region-->select security group-->add instaces-->create
+
+    cloud front-->create-->origin domain select clb-->http only-->cache optimization-->WAF(do not)-->create
+
+
+                                                                                           DAY10(Docker)
+
+Q1.
+
+-> Launch instance (OS = Ubuntu)
+-> Connect to CLI
+-> Commands 
+		-> sudo su
+		-> apt update -y
+		-> apt install docker.io -y
+		-> docker pull image name (ubuntu)
+		-> docker images
+ 		-> docker run -itd -p 80:80 image name (ubuntu)
+		-> docker container
+		-> docker exec -it container name (289a) sh
+		 Running a simple website: 
+                -> apt install apache2 -y
+		-> service apache2 start
+		-> Cd /var/www/html
+		-> Ls
+		-> Index.html
+                ->Nano index.html
+		-> Public IP select and run
+
+-> Commands Explanation
+		-> sudo su [enable super user]
+		-> apt update -y [apt-get update -y (version < 18)]
+		-> apt install docker.io -y [installs docker]
+		-> docker ps [docker ps = lists all containers, docker ps -a = lists running or active containers]
+		-> docker images [docker images = can pull from docker hub , similar to AMI ]
+		-> docker pull ubuntu [docker pull image_name, image name = ubuntu , see in docker hub, httpd can also be used]
+		-> docker images [delete unwanted images= docker rmi 4code (removes image), delete multiple images= docker rmi 4code 4code 4code (4code = first 4 digits of image id, to remove multiple images)]
+		-> docker run -itd -p 80:80 ubuntu(port forwarding)
+		-> docker ps [docker rm(to delete containers)]
+		-> docker exec -it 289a(289a= container id first 4) sh
+                
+		Running a simple website: 
+                -> apt install apache2 -y
+		-> service apache2 start
+		-> Cd /var/www/html
+		-> Ls
+		-> Index.html
+                ->Nano index.html ( delete - rm -rf index.html)
+		-> Public IP select and run
+
+Q2.
+launch instances(ubuntu)-->connect-->comment(
+[instance terminal]
+sudo su
+apt update -y
+apt install docker.io -y
+docker ps 
+[ if not using sudo su use sudo in before every commands]
+[or terminate current docker container if working in same instance]
+
+[install docker]
+nano Dockerfile
+mkdir html
+cd html
+nano index.html
+cd(space)..
+nano Dockerfile
+cat index.html
+cd(space) ..
+
+[opens a new docker file]
+
+FROM centos:7 - [centos 8 is deprecated][image name should be in small letters]
+RUN yum update -y && yum install httpd -y [RUN undergo operations inside the page]
+COPY ./html(space)/var/www/html[httpd folder]
+EXPOSE 80
+CMD["/usr/sbin/httpd","-D","FOREGROUND"] [final command starts httpd as foreground process]
+ctrl + x [save]
+
+[instance terminal]
+
+docker build(space) .(space) -t (image name) [direct folder]
+docker images
+docker run -itd -p 80:80 (image name)
+docker ps(find currently running docker server)
+
+[aws console]
+[create IAM Role]
+
+IAM -> Roles -> Create Role-> User name-> next -> policy[Admimistative Process]->create user role
+
+Select role->Security credentials -> create access key-> CLI-> acknowledge-> create key & secret access key-> Download .csv file [to see secret access key]
+
+[Create ECR]
+search elastic container registry [ECR]
+create -> name -> create repository[registry name should be same as docker image]
+docker repository -> push commands
+instance connect ->install awscli
+(https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+a) curl command first line
+apt install unzip
+b) tab, up and down arrow to switch over
+c) unzip command second line
+d) sudo command third line
+aws configure
+copy and paste access key
+copy and paste secret access key
+region skip
+default output format: json
+e) copy first view push command [login succeeded]
+f) copy third command 
+g) copy fourth command
+refresh and take screenshot
+
+[Rebuild image and rename it]
+docker build . -t (image name)[after colon - version]
+
+[two or more than two images with same id] - docker rmi imagename -f 
+)
+      
