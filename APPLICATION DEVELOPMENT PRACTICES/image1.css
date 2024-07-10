@@ -1,0 +1,68 @@
+.one{
+    width:100%;
+    height:30px;
+    background-color: grey;
+    justify-content: space-between;
+    display:flex;
+}
+ol,li{
+    display: inline;
+    justify-content: space-around;
+    padding-left:20px;
+}
+.two{
+    width:100%;
+    height:70px;
+    background-color: black;
+    color:white;
+    text-align: center;
+}
+.three{
+    width:100%;
+    height:120px;
+    background-color: grey;
+    padding-left: 200px;
+    padding-top: 9px;
+}
+.four{
+    width:100%;
+    height:500px;
+    background-color: black;
+    color:white;
+   
+}
+.five{
+    display: flex;
+    justify-content: space-around;
+}
+.six{
+    width:250px;
+    height:150px;
+    background-color: white;
+    color:black;
+    padding: 20px;
+border-radius: 20px;
+}
+.seven{
+    background-color: grey;
+    height:400px;
+    width:100%;
+}
+.varsh{
+    display: flex;
+    justify-content: space-around;
+}
+.eight{
+    height:200px;
+    width:200px;
+    background-color: white;
+    color:black;
+    border-radius: 20px;
+    padding: 10px;
+}
+.poos{
+    width:100%;
+    height:200px;
+    background-color: black;
+    color:white;
+}

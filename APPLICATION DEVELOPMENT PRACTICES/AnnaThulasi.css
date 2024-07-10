@@ -1,0 +1,44 @@
+.top
+{
+    width:1200px;
+    height:30px;
+    background-color:darkblue;
+    color:white;
+    align-items:center;
+    display:flex;
+    justify-content: space-between;
+    
+}
+li,ul
+{
+    display:inline;
+    padding:right 40px;
+}
+.sec
+{
+    display:flex;
+}
+.col
+{
+    color:blue;
+}
+.image1
+{
+    width:1200px;
+    height:100px;
+}
+.type
+{
+    width:100%;
+    height:20px;
+    color:blue;
+    margin:left;
+}
+.img
+{
+    width:1200px;
+    height:400px;
+    background-image: url("https://www.annauniv.edu/images/main-slider/slide1.jpeg");
+    text-align:center;
+    color:white;
+}

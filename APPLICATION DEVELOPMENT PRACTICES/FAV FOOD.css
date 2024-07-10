@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    text-align: center;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  hr {
+    border: 5px solid white;
+    margin: 0;
+  }
+  
+  h1 {
+    font-size: 50px;
+    font-style: italic;
+  }
+  
+  h3 {
+    font-size: 30px;
+    font-style: italic;
+  }
+  
+  h3, p {
+    color: white;
+    width: 70vw;
+  }
+  
+  img {
+    width: 100%;
+  }
+  
+  .text-large {
+    font-size: 70px;
+    margin-top: 30px;
+  }
+  
+  .hero {
+    width: 100%;
+    height: 80vh;
+  
+    position: relative;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero img {
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    align-self: flex-start;
+  }
+  
+  img:not(#titleImage) {
+    border: 3px solid white;
+    padding: 7px;
+    width: 70vw;
+  }
+  
+  .pizza-page,
+  .fried-chicken-page,
+  .salad-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 15px;
+  }
+  
+  .pizza-page {
+    background-color: gold;
+  }
+  
+  .fried-chicken-page {
+    background-color: darkviolet;
+  }
+  
+  .salad-page {
+    background-color: deepskyblue;
+  }
