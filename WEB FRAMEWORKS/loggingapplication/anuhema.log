@@ -1,0 +1,47 @@
+14:30:52:413 INFOc.e.l.LoggingapplicationApplicationStarting LoggingapplicationApplication using Java 17.0.10 with PID 5080 (C:\Users\HP\Desktop\loggingapplication\target\classes started by HP in C:\Users\HP\Desktop\loggingapplication)
+14:30:52:422 INFOc.e.l.LoggingapplicationApplicationNo active profile set, falling back to 1 default profile: "default"
+14:30:52:570 INFOo.s.b.d.e.DevToolsPropertyDefaultsPostProcessorDevtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+14:30:52:570 INFOo.s.b.d.e.DevToolsPropertyDefaultsPostProcessorFor additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+14:30:54:328 INFOo.s.d.r.c.RepositoryConfigurationDelegateBootstrapping Spring Data JPA repositories in DEFAULT mode.
+14:30:54:419 INFOo.s.d.r.c.RepositoryConfigurationDelegateFinished Spring Data repository scanning in 44 ms. Found 0 JPA repository interfaces.
+14:30:55:774 INFOo.s.b.w.e.tomcat.TomcatWebServerTomcat initialized with port 8080 (http)
+14:30:55:803 INFOo.a.catalina.core.StandardServiceStarting service [Tomcat]
+14:30:55:803 INFOo.a.catalina.core.StandardEngineStarting Servlet engine: [Apache Tomcat/10.1.20]
+14:30:56:011 INFOo.a.c.c.C.[Tomcat].[localhost].[/]Initializing Spring embedded WebApplicationContext
+14:30:56:011 INFOo.s.b.w.s.c.ServletWebServerApplicationContextRoot WebApplicationContext: initialization completed in 3441 ms
+14:30:56:217 WARNo.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContextException encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: Failed to determine a suitable driver class
+14:30:56:269 INFOo.a.catalina.core.StandardServiceStopping service [Tomcat]
+14:30:56:366 INFOo.s.b.a.l.ConditionEvaluationReportLogger
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+14:30:56:423ERRORo.s.b.d.LoggingFailureAnalysisReporter
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
+
+14:35:55:408 INFOc.e.l.LoggingapplicationApplicationStarting LoggingapplicationApplication using Java 17.0.10 with PID 10624 (C:\Users\HP\Desktop\loggingapplication\target\classes started by HP in C:\Users\HP\Desktop\loggingapplication)
+14:35:55:414 INFOc.e.l.LoggingapplicationApplicationNo active profile set, falling back to 1 default profile: "default"
+14:35:55:608 INFOo.s.b.d.e.DevToolsPropertyDefaultsPostProcessorDevtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+14:35:55:609 INFOo.s.b.d.e.DevToolsPropertyDefaultsPostProcessorFor additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+14:35:58:631 INFOo.s.b.w.e.tomcat.TomcatWebServerTomcat initialized with port 8080 (http)
+14:35:58:662 INFOo.a.catalina.core.StandardServiceStarting service [Tomcat]
+14:35:58:667 INFOo.a.catalina.core.StandardEngineStarting Servlet engine: [Apache Tomcat/10.1.20]
+14:35:58:825 INFOo.a.c.c.C.[Tomcat].[localhost].[/]Initializing Spring embedded WebApplicationContext
+14:35:58:830 INFOo.s.b.w.s.c.ServletWebServerApplicationContextRoot WebApplicationContext: initialization completed in 3213 ms
+14:35:59:855 INFOo.s.b.d.a.OptionalLiveReloadServerLiveReload server is running on port 35729
+14:35:59:962 INFOo.s.b.w.e.tomcat.TomcatWebServerTomcat started on port 8080 (http) with context path ''
+14:35:59:976 INFOc.e.l.LoggingapplicationApplicationStarted LoggingapplicationApplication in 5.712 seconds (process running for 6.73)
